@@ -14,22 +14,22 @@ class Moxie(Architecture):
 
     stack_pointer = 'sp'
     regs = {
-        'sp':RegisterInfo('sp', 4),
-        'fp':RegisterInfo('fp', 4),
-        'r0':RegisterInfo('r0', 4),
-        'r1':RegisterInfo('r1', 4),
-        'r2':RegisterInfo('r2', 4),
-        'r3':RegisterInfo('r3', 4),
-        'r4':RegisterInfo('r4', 4),
-        'r5':RegisterInfo('r5', 4),
-        'r6':RegisterInfo('r6', 4),
-        'r7':RegisterInfo('r7', 4),
-        'r8':RegisterInfo('r8', 4),
-        'r9':RegisterInfo('r9', 4),
-        'r10':RegisterInfo('r10', 4),
-        'r11':RegisterInfo('r11', 4),
-        'r12':RegisterInfo('r12', 4),
-        'r13':RegisterInfo('r13', 4),
+        'sp':RegisterInfo('sp', 2),
+        'fp':RegisterInfo('fp', 2),
+        'r0':RegisterInfo('r0', 2),
+        'r1':RegisterInfo('r1', 2),
+        'r2':RegisterInfo('r2', 2),
+        'r3':RegisterInfo('r3', 2),
+        'r4':RegisterInfo('r4', 2),
+        'r5':RegisterInfo('r5', 2),
+        'r6':RegisterInfo('r6', 2),
+        'r7':RegisterInfo('r7', 2),
+        'r8':RegisterInfo('r8', 2),
+        'r9':RegisterInfo('r9', 2),
+        'r10':RegisterInfo('r10', 2),
+        'r11':RegisterInfo('r11', 2),
+        'r12':RegisterInfo('r12', 2),
+        'r13':RegisterInfo('r13', 2),
     }
 
     def get_operands(self, instr, word):
@@ -158,7 +158,7 @@ class Moxie(Architecture):
             src_token = OperandTokens[src_op](src, src_value)
 
         if src_op != EMPTY_MODE and dst_op != EMPTY_MODE:
-            tokens += [InstructionTextToken(InstructionTextTokenType.TextToken, ',')]
+            tokens += [InstructionTextToken(InstructionTextTokenType.TextToken, ', ')]
         if src_token:
             tokens += src_token
 
